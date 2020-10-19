@@ -23,9 +23,11 @@
 <main>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-            <h1 class="header center orange-text">Finde den richtigen Text-Encoder für dein Machine Learning-Projekt</h1>
+            <h1 class="header center orange-text">Finde den richtigen Text-Encoder für dein Machine
+                Learning-Projekt</h1>
             <div class="row center">
-                <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste von möglichen Text-Encodern für dein ML-Projekt zu erhalten.</h5>
+                <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste
+                    von möglichen Text-Encodern für dein ML-Projekt zu erhalten.</h5>
             </div>
         </div>
     </div>
@@ -46,11 +48,11 @@
                 <div class="input-field col s6 m4">
                     <select id="length">
                         <option value="" disabled selected>Länge der Texte</option>
-                        <option value="1">< 10 Wörter</option>
-                        <option value="2">< 100 Wörter</option>
-                        <option value="2">< 1.000 Wörte</option>
-                        <option value="2">< 10.000 Wörter</option>
-                        <option value="2">> 10.000 Wörter</option>
+                        <option value="10">< 10 Wörter</option>
+                        <option value="100">< 100 Wörter</option>
+                        <option value="1000">< 1.000 Wörte</option>
+                        <option value="10000">< 10.000 Wörter</option>
+                        <option value="10001">> 10.000 Wörter</option>
                     </select>
                     <label for="length">Länge der Texte</label>
                 </div>
@@ -58,11 +60,11 @@
                 <div class="input-field col s6 m4">
                     <select id="data">
                         <option value="" disabled selected>Datensätze vorhanden</option>
-                        <option value="1">< 1.000</option>
-                        <option value="2">< 10.0000</option>
-                        <option value="2">< 100.000</option>
-                        <option value="2">< 1.000.000</option>
-                        <option value="2">> 1.000.000</option>
+                        <option value="1000">< 1.000</option>
+                        <option value="10000">< 10.0000</option>
+                        <option value="100000">< 100.000</option>
+                        <option value="1000000">< 1.000.000</option>
+                        <option value="1000001">> 1.000.000</option>
                     </select>
                     <label for="data">Datensätze</label>
                 </div>
@@ -70,8 +72,8 @@
                 <div class="input-field col s12 m6">
                     <select id="mistakes">
                         <option value="" disabled selected>Rechtschreibfehler</option>
-                        <option value="1">Können vorkommen</option>
-                        <option value="2">Nein, sehr unwahrscheinlich</option>
+                        <option value="true">Können vorkommen</option>
+                        <option value="false">Nein, sehr unwahrscheinlich</option>
                     </select>
                     <label for="mistakes">Sind Rechtschreibfehler realistisch?</label>
                 </div>
@@ -79,13 +81,43 @@
                 <div class="input-field col s12 m6">
                     <select id="context">
                         <option value="" disabled selected>Reihenfolge der Wörter/Kontext</option>
-                        <option value="1">Ja, der Kontext der Wörter ist wichtig</option>
-                        <option value="2">Nein, der Kontext kann ignoriert werden</option>
+                        <option value="true">Ja, der Kontext der Wörter ist wichtig</option>
+                        <option value="false">Nein, der Kontext kann ignoriert werden</option>
                     </select>
                     <label for="context">Kontext</label>
                 </div>
+            </div>
+            <div class="row center">
+                <a href="#" id="search" class="btn-small waves-effect waves-light orange disabled">Suchen</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="container hide" id="table-container">
+        <div class="section">
 
+            <!--Text-Encoder Table Section-->
+            <div class="row">
+                <table class="responsive-table striped" id="encoder-table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>GitHub-Repository</th>
+                        <th>Beschreibung</th>
+                        <th>Vorteile</th>
+                        <th>Nachteile</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row" style="margin-top: 5em;">Für weitere Informationen zu den Text-Encodern und den hier angegebenen Spezifikationen,
+                verweise ich auf meine Bachelorarbeit:
+                <a href="https://github.com/MGrashoff/BA-Mats-Grashoff">https://github.com/MGrashoff/BA-Mats-Grashoff</a>.
             </div>
         </div>
     </div>
@@ -104,10 +136,18 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Encoder Selector -->
+<script src="assets/js/encoder-selector.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('select').formSelect();
     });
+
+    $('#language').prop('selectedIndex',0);
+    $('#length').prop('selectedIndex',0);
+    $('#data').prop('selectedIndex',0);
+    $('#mistakes').prop('selectedIndex',0);
+    $('#context').prop('selectedIndex',0);
 </script>
 </body>
 </html>

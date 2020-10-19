@@ -15,3 +15,8 @@ h1.header {
 h5.header {
     font-size: 1.5rem;
 }
+
+td, tr {
+    /*word-wrap: break-word;*/
+    /*width: 150px;*/
+}

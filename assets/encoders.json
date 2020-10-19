@@ -1,0 +1,32 @@
+[
+  {
+    "name": "BERT",
+    "image": "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2019/04/09110726/Bert-Head.png",
+    "github": "https://github.com/google-research/bert",
+    "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
+    "advantages": "Präzise, wenig Training benötigt",
+    "disadvantages": "Maskierung fehleranfällig",
+    "specs": {
+      "language": 2,
+      "length": 10000,
+      "data": 100000,
+      "mistakes": "true",
+      "context": "true"
+    }
+  },
+  {
+    "name": "TEST",
+    "image": "",
+    "github": "https://github.com/google-research/bert",
+    "description": "TEST",
+    "advantages": "Präzise, wenig Training benötigt",
+    "disadvantages": "Maskierung fehleranfällig",
+    "specs": {
+      "language": 1,
+      "length": 100,
+      "data": 1000,
+      "mistakes": "false",
+      "context": "false"
+    }
+  }
+]
