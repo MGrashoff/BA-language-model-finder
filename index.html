@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BA-Text-Encoder-Finder</title>
+</head>
+<body>
+<header>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Text-Encoder Finder</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h1 class="header center orange-text">Finde den richtigen Text-Encoder für dein Machine Learning-Projekt</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste von möglichen Text-Encodern für dein ML-Projekt zu erhalten.</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+
+            <!--   Specification Section   -->
+            <div class="row">
+                <div class="input-field col s12 m4">
+                    <select id="language">
+                        <option value="" disabled selected>Sprachen</option>
+                        <option value="1">1 Sprache</option>
+                        <option value="2">2 oder mehr Sprachen</option>
+                    </select>
+                    <label for="language">Sprachen</label>
+                </div>
+
+                <div class="input-field col s6 m4">
+                    <select id="length">
+                        <option value="" disabled selected>Länge der Texte</option>
+                        <option value="1">< 10 Wörter</option>
+                        <option value="2">< 100 Wörter</option>
+                        <option value="2">< 1.000 Wörte</option>
+                        <option value="2">< 10.000 Wörter</option>
+                        <option value="2">> 10.000 Wörter</option>
+                    </select>
+                    <label for="length">Länge der Texte</label>
+                </div>
+
+                <div class="input-field col s6 m4">
+                    <select id="data">
+                        <option value="" disabled selected>Datensätze vorhanden</option>
+                        <option value="1">< 1.000</option>
+                        <option value="2">< 10.0000</option>
+                        <option value="2">< 100.000</option>
+                        <option value="2">< 1.000.000</option>
+                        <option value="2">> 1.000.000</option>
+                    </select>
+                    <label for="data">Datensätze</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="mistakes">
+                        <option value="" disabled selected>Rechtschreibfehler</option>
+                        <option value="1">Können vorkommen</option>
+                        <option value="2">Nein, sehr unwahrscheinlich</option>
+                    </select>
+                    <label for="mistakes">Sind Rechtschreibfehler realistisch?</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="context">
+                        <option value="" disabled selected>Reihenfolge der Wörter/Kontext</option>
+                        <option value="1">Ja, der Kontext der Wörter ist wichtig</option>
+                        <option value="2">Nein, der Kontext kann ignoriert werden</option>
+                    </select>
+                    <label for="context">Kontext</label>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="page-footer light-blue lighten-1">
+    <div class="footer-copyright">
+        <div class="container">
+            Made by Mats Grashoff
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+</script>
+</body>
+</html>
