@@ -80,7 +80,9 @@ function fillTable() {
                 '<td><img style="width: 50px;" src="' + encoderJSON[i].image + '" alt=""></td>' +
                 '<td>' + encoderJSON[i].name + '</td>' +
                 '<td>' + encoderJSON[i].github + '</td>' +
-                '<td>' + encoderJSON[i].description + '</td>' +
+                '<td>' + encoderJSON[i].description.substring(0, 90) + '...' + '</td>' +
+                '<td>' + encoderJSON[i].download + '</td>' +
+                '<td>' + encoderJSON[i].paper + '</td>' +
                 '<td>' + encoderJSON[i].advantages + '</td>' +
                 '<td>' + encoderJSON[i].disadvantages + '</td>' +
                 '</tr>';
