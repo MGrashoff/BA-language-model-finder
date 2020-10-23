@@ -19,4 +19,15 @@ h5.header {
 table td, table th {
     word-wrap: break-word;
     width: 150px;
+    max-width: 150px;
+}
+
+.model-name {
+    word-wrap: break-word;
+    max-width: 100px;
+}
+
+.model-description {
+    word-wrap: break-word;
+    max-width: 250px;
 }

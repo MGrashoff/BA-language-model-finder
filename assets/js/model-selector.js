@@ -1,4 +1,4 @@
-var encoderJSON = null;
+var modelsJSON = null;
 var selectorValues = {
     "started": false,
     "language": "",
@@ -8,8 +8,8 @@ var selectorValues = {
     "context": ""
 };
 
-$.getJSON("assets/encoders.json", function (json) {
-    encoderJSON = json;
+$.getJSON("assets/models.json", function (json) {
+    modelsJSON = json;
 });
 
 $('#language').on('change', function () {
@@ -66,9 +66,9 @@ function fillTable() {
     console.log(selectorValues);
     $('#table-body').empty();
 
-    for (var i = 0; i < encoderJSON.length; i++) {
+    for (var i = 0; i < modelsJSON.length; i++) {
         var html = '';
-        var specs = encoderJSON[i].specs;
+        var specs = modelsJSON[i].specs;
         if(selectorValues.started === false ||
             (specs.language == selectorValues.language &&
                 (specs.length == selectorValues.length || specs.length <= selectorValues.length) &&
@@ -77,14 +77,13 @@ function fillTable() {
                 specs.context == selectorValues.context)) {
             html += '' +
                 '<tr>' +
-                '<td><img style="width: 50px;" src="' + encoderJSON[i].image + '" alt=""></td>' +
-                '<td>' + encoderJSON[i].name + '</td>' +
-                '<td>' + encoderJSON[i].github + '</td>' +
-                '<td>' + encoderJSON[i].description.substring(0, 90) + '...' + '</td>' +
-                '<td>' + encoderJSON[i].download + '</td>' +
-                '<td>' + encoderJSON[i].paper + '</td>' +
-                '<td>' + encoderJSON[i].advantages + '</td>' +
-                '<td>' + encoderJSON[i].disadvantages + '</td>' +
+                // '<td><img style="width: 50px;" src="' + modelsJSON[i].image + '" alt=""></td>' +
+                '<td>' + modelsJSON[i].name + '</td>' +
+                '<td>' + modelsJSON[i].github + '</td>' +
+                '<td>' + modelsJSON[i].description.substring(0, 120) + '...' + '</td>' +
+                '<td>' + modelsJSON[i].download + '</td>' +
+                '<td>' + modelsJSON[i].paper + '</td>' +
+                '<td>' + modelsJSON[i].use + '</td>' +
                 '</tr>';
         }
 

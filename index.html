@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BA-Text-Encoder-Finder</title>
+    <title>BA-Language-Model-Finder</title>
 </head>
 <body>
 <header>
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Text-Encoder Finder</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Language Model Finder</a>
         </div>
     </nav>
 </header>
@@ -23,11 +23,11 @@
 <main>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-            <h1 class="header center orange-text">Finde den richtigen Text-Encoder für dein Machine
+            <h1 class="header center orange-text">Finde das richtige Language Model für dein Machine
                 Learning-Projekt</h1>
             <div class="row center">
                 <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste
-                    von möglichen Text-Encodern für dein ML-Projekt zu erhalten.</h5>
+                    von möglichen Language Modeln für dein ML-Projekt zu erhalten.</h5>
             </div>
         </div>
     </div>
@@ -96,19 +96,17 @@
     <div class="container hide" id="table-container">
         <div class="section">
 
-            <!--Text-Encoder Table Section-->
+            <!--Model Table Section-->
             <div class="row">
-                <table class="responsive-table striped" id="encoder-table">
+                <table class="responsive-table striped" id="model-table">
                     <thead>
                     <tr>
-                        <th></th>
-                        <th>Name</th>
+                        <th class="model-name">Name</th>
                         <th>GitHub-Repository</th>
-                        <th>Beschreibung</th>
+                        <th class="model-description">Beschreibung</th>
                         <th>Model-Download</th>
                         <th>Paper</th>
-                        <th>Vorteile</th>
-                        <th>Nachteile</th>
+                        <th>Einsatzgebiet</th>
                     </tr>
                     </thead>
 
@@ -117,7 +115,7 @@
                 </table>
             </div>
 
-            <div class="row" style="margin-top: 5em;">Für weitere Informationen zu den Text-Encodern und den hier angegebenen Spezifikationen,
+            <div class="row" style="margin-top: 5em;">Für weitere Informationen zu den Language Modeln und den hier angegebenen Spezifikationen,
                 verweise ich auf meine Bachelorarbeit:
                 <a href="https://github.com/MGrashoff/BA-Mats-Grashoff" target="_blank">https://github.com/MGrashoff/BA-Mats-Grashoff</a>.
             </div>
@@ -138,8 +136,8 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- Encoder Selector -->
-<script src="assets/js/encoder-selector.js"></script>
+<!-- Model Selector -->
+<script src="assets/js/model-selector.js"></script>
 <script>
     $(document).ready(function () {
         $('select').formSelect();
