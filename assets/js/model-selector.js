@@ -79,10 +79,10 @@ function fillTable() {
                 '<tr>' +
                 // '<td><img style="width: 50px;" src="' + modelsJSON[i].image + '" alt=""></td>' +
                 '<td>' + modelsJSON[i].name + '</td>' +
-                '<td>' + modelsJSON[i].github + '</td>' +
+                '<td><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
                 '<td>' + modelsJSON[i].description.substring(0, 120) + '...' + '</td>' +
-                '<td>' + modelsJSON[i].download + '</td>' +
-                '<td>' + modelsJSON[i].paper + '</td>' +
+                '<td><a href="' + modelsJSON[i].download + '" target="_blank">' + modelsJSON[i].download + '</a></td>' +
+                '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
                 '<td>' + modelsJSON[i].use + '</td>' +
                 '</tr>';
         }

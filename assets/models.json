@@ -5,7 +5,7 @@
     "github": "https://github.com/google-research/bert",
     "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
     "download": "https://huggingface.co/bert-base-uncased",
-    "use": "",
+    "use": "Englische Texte, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1810.04805",
     "specs": {
       "language": 1,
@@ -21,7 +21,7 @@
     "github": "https://github.com/google-research/bert",
     "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
     "download": "https://huggingface.co/bert-base-multilingual-cased",
-    "use": "",
+    "use": "Multisprachen-Systeme, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1810.04805",
     "specs": {
       "language": 2,
@@ -37,7 +37,7 @@
     "github": "https://github.com/huggingface/transformers/tree/master/examples/distillation",
     "description": "DistilBERT wurde von huggingface.co entwickelt um dem stetigen Wachstum der NLP-Modelle entgegen zu wirken. Basierend auf dem BERT-Modell, ist DistilBERT ein reduziertes Modell, welches traniert wurde, um das Verhalten des großen Modells (in diesem Fall BERT) zu reproduzieren.",
     "download": "https://huggingface.co/distilbert-base-uncased",
-    "use": "",
+    "use": "Englische Texte, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1910.01108",
     "specs": {
       "language": 1,
@@ -53,7 +53,7 @@
     "github": "https://github.com/huggingface/transformers/tree/master/examples/distillation",
     "description": "DistilBERT wurde von huggingface.co entwickelt um dem stetigen Wachstum der NLP-Modelle entgegen zu wirken. Basierend auf dem BERT-Modell, ist DistilBERT ein reduziertes Modell, welches traniert wurde, um das Verhalten des großen Modells (in diesem Fall BERT) zu reproduzieren.",
     "download": "https://huggingface.co/distilbert-base-multilingual-cased",
-    "use": "",
+    "use": "Multisprachen-Systeme, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1910.01108",
     "specs": {
       "language": 1,
@@ -69,12 +69,12 @@
     "github": "https://github.com/pytorch/fairseq/tree/master/examples/roberta",
     "description": "RoBERTa basiert auf dem BERT-Modell, welches mit Hilfe einer Maskierungsstrategie erlernt, versteckte (maskierte) Teile eines Textes zu rekonstruieren. RoBERTa nutzt diese Maskierung, wird im Vergleich zu BERT jedoch mit deutlich kleineren Batches, mehr Daten und für einen längeren Zeitraum trainiert. Dies erlaubt eine größere Genauigkeit in ML-Aufgaben.",
     "download": "https://huggingface.co/roberta-base",
-    "use": "",
+    "use": "Englische Texte, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1907.11692",
     "specs": {
-      "language": 2,
-      "length": 10000,
-      "data": 100000,
+      "language": 1,
+      "length": 1000,
+      "data": 10000,
       "mistakes": "true",
       "context": "true"
     }
@@ -85,12 +85,12 @@
     "github": "https://github.com/google-research/albert",
     "description": "ALBERT steht für \"A Lite BERT\" und versucht, die Größe des BERT-Modells zu verringern, ohne an Genauigkeit zu verlieren. Dies wird durch eine Paramterübergabe zwischen den Schichten des Transformer-basierten neuronalen Netzes erlangt.",
     "download": "https://huggingface.co/albert-base-v2",
-    "use": "",
+    "use": "Englische Texte, Token/Text-Klassifizierung, Frage-Antwort Aufgaben",
     "paper": "https://arxiv.org/abs/1909.11942",
     "specs": {
-      "language": 2,
-      "length": 10000,
-      "data": 100000,
+      "language": 1,
+      "length": 1000,
+      "data": 10000,
       "mistakes": "true",
       "context": "true"
     }
@@ -101,11 +101,11 @@
     "github": "https://github.com/zihangdai/xlnet",
     "description": "XLNet wurde 2019 von Zhilin Yang et.al. entwickelt und basiert auf einem \"permutation language modeling\"-Prozess. Durch das Vertauschen der Wörter führt dazu, dass XLNet Abhängigkeiten in verschiedenen Kombinationen erlernt.",
     "download": "https://huggingface.co/xlnet-base-cased",
-    "use": "",
+    "use": "Englische Texte, Token/Text-Klassifizierung, Frage-Antwort Aufgaben, Verarbeitung langer Texte",
     "paper": "https://arxiv.org/abs/1906.08237",
     "specs": {
-      "language": 2,
-      "length": 10000,
+      "language": 1,
+      "length": 10001,
       "data": 100000,
       "mistakes": "true",
       "context": "true"
@@ -117,7 +117,7 @@
     "github": "https://github.com/google-research/text-to-text-transfer-transformer",
     "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
     "download": "https://huggingface.co/t5-base",
-    "use": "",
+    "use": "Übersetzen, Embeddings, Zusammenfassungen",
     "paper": "https://arxiv.org/abs/1910.10683",
     "specs": {
       "language": 2,
@@ -133,10 +133,10 @@
     "github": "https://github.com/openai/gpt-2",
     "description": "\"Generative Pretrained Transformer 2\" (GPT-2) ist ein von OpenAI entwickeltes Sprachmodell, mit dem Zweck, das nächste Wort innerhalb eines Textes vorherzusagen. Mit seinen 1,5 Milliarden Parametern soll GPT-2 in der Lage sein, Texte zu verfassen, die nicht von denen eines Menschen zu unterscheiden sind.",
     "download": "https://huggingface.co/gpt2",
-    "use": "",
+    "use": "Textgenerierung",
     "paper": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
     "specs": {
-      "language": 2,
+      "language": 1,
       "length": 10000,
       "data": 100000,
       "mistakes": "true",
@@ -149,14 +149,14 @@
     "github": "https://github.com/facebookresearch/fastText",
     "description": "Entwickelt wurde fastText in den \"Facebook AI Reasearch\" (FAIR) Laboren. Jedes Wort welches fastText verarbeitet, wird in ein \"n-gram\" von Wörtern zerlegt, um daraus eine Vektorrepräsentation zu erzeugen.",
     "download": "https://fasttext.cc/docs/en/english-vectors.html",
-    "use": "",
+    "use": "Klassifizierung, Embeddings, wenig Speicher vorhanden",
     "paper": "https://arxiv.org/abs/1607.04606",
     "specs": {
-      "language": 2,
+      "language": 1,
       "length": 10000,
       "data": 100000,
       "mistakes": "true",
-      "context": "true"
+      "context": "false"
     }
   },
   {
@@ -165,14 +165,14 @@
     "github": "https://github.com/tmikolov/word2vec",
     "description": "Word2Vec besteht aus trainierten Modellen, die auf neuronalen Netzen basieren, um Wörter oder ganze Sätze in ihrem linguistischen Kontext zu (re-)konstruieren. Dabei benutzt Word2Vec zwei Methoden: \"Skip-Gram\" und \"Common Bag Of Words\" (CBOW)",
     "download": "",
-    "use": "",
+    "use": "Klassifizierung, Embeddings, wenig Speicher vorhanden",
     "paper": "https://arxiv.org/abs/1301.3781",
     "specs": {
-      "language": 2,
+      "language": 1,
       "length": 10000,
       "data": 100000,
-      "mistakes": "true",
-      "context": "true"
+      "mistakes": "false",
+      "context": "false"
     }
   },
   {
@@ -184,11 +184,11 @@
     "use": "",
     "paper": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi42_KYnMPsAhVB3qQKHUnNCAsQFjACegQIAhAC&url=https%3A%2F%2Fcs.nju.edu.cn%2Fzhouzh%2Fzhouzh.files%2Fpublication%2Fijmlc10.pdf&usg=AOvVaw3o9tGEWV4In1hiwFzIdsQj",
     "specs": {
-      "language": 2,
+      "language": 1,
       "length": 10000,
       "data": 100000,
-      "mistakes": "true",
-      "context": "true"
+      "mistakes": "false",
+      "context": "false"
     }
   }
 ]
