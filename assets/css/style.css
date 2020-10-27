@@ -31,3 +31,7 @@ table td, table th {
     word-wrap: break-word;
     max-width: 250px;
 }
+
+.divider {
+    margin-bottom: 3em;
+}
