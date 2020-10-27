@@ -1,21 +1,26 @@
 var modelsJSON = null;
 var selectorValues = {
     "started": false,
-    "language": "",
+    "languages": "",
     "length": "",
-    "data": "",
+    "use": "",
     "mistakes": "",
     "context": ""
 };
 
 $.getJSON("assets/models.json", function (json) {
     modelsJSON = json;
+    if(localStorage.getItem("selectorValues") !== null) {
+        selectorValues = JSON.parse(localStorage.getItem("selectorValues"));
+        checkSelectors();
+    }
 });
 
 $('#language').on('change', function () {
-    console.log('Language: ', $(this).val());
+    console.log('Languages: ', $(this).val());
     selectorValues.started = true;
-    selectorValues.language = $(this).val();
+    selectorValues.languages = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
 
@@ -23,13 +28,15 @@ $('#length').on('change', function () {
     console.log('Length: ', $(this).val());
     selectorValues.started = true;
     selectorValues.length = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
 
-$('#data').on('change', function () {
-    console.log('Data: ', $(this).val());
+$('#use').on('change', function () {
+    console.log('Use: ', $(this).val());
     selectorValues.started = true;
-    selectorValues.data = $(this).val();
+    selectorValues.use = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
 
@@ -37,6 +44,7 @@ $('#mistakes').on('change', function () {
     console.log('Mistakes: ', $(this).val());
     selectorValues.started = true;
     selectorValues.mistakes = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
 
@@ -44,6 +52,7 @@ $('#context').on('change', function () {
     console.log('Context: ', $(this).val());
     selectorValues.started = true;
     selectorValues.context = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
 
@@ -69,26 +78,61 @@ function fillTable() {
     for (var i = 0; i < modelsJSON.length; i++) {
         var html = '';
         var specs = modelsJSON[i].specs;
+        var use = modelsJSON[i].use;
+        var languages = modelsJSON[i].languages;
+        var check = checkLanguage(languages);
+        var language = check[0];
+        var iterator = check[1];
+
         if(selectorValues.started === false ||
-            (specs.language == selectorValues.language &&
-                (specs.length == selectorValues.length || specs.length <= selectorValues.length) &&
-                (specs.data == selectorValues.data || specs.data <= selectorValues.data) &&
+            ((specs.length == selectorValues.length || specs.length >= selectorValues.length) &&
                 specs.mistakes == selectorValues.mistakes &&
-                specs.context == selectorValues.context)) {
+                specs.context == selectorValues.context) &&
+            checkUse(use) && check !== false) {
+
             html += '' +
                 '<tr>' +
-                // '<td><img style="width: 50px;" src="' + modelsJSON[i].image + '" alt=""></td>' +
-                '<td>' + modelsJSON[i].name + '</td>' +
+                '<td>' + modelsJSON[i].name + '-' + language + '</td>' +
                 '<td><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
-                '<td><span title="' + modelsJSON[i].description + '">' + modelsJSON[i].description.substring(0, 120) + '...' + '</span></td>' +
-                '<td><a href="' + modelsJSON[i].download + '" target="_blank">' + modelsJSON[i].download + '</a></td>' +
+                '<td>' + modelsJSON[i].description.substring(0, 120) + '...' + '</td>' +
+                '<td><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
                 '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
-                '<td>' + modelsJSON[i].use + '</td>' +
                 '</tr>';
         }
 
-        if (html !== '') {
+        if(html !== '') {
             $("#table-body").append(html);
         }
+    }
+}
+
+function checkUse(modelUseCases) {
+    for (var i = 0; i < selectorValues.use.length; i++) {
+        if (!modelUseCases.includes(selectorValues.use[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkLanguage(modelLanguages) {
+    if (selectorValues.languages.length > 1) {
+        for (var i = 0; i < modelLanguages.length; i++) {
+            for (var language in modelLanguages[i]) {
+                if (language === 'multi') {
+                    return ['multi', i];
+                }
+            }
+        }
+        return false;
+    } else {
+        for (var j = 0; j < modelLanguages.length; j++) {
+            for (var l in modelLanguages[j]) {
+                if (selectorValues.languages.includes(l)) {
+                    return [l, j];
+                }
+            }
+        }
+        return false;
     }
 }

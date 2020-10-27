@@ -15,7 +15,7 @@
 <body>
 <header>
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Language Model Finder</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ML-Pipeline Creator</a>
         </div>
     </nav>
 </header>
@@ -23,7 +23,7 @@
 <main>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-            <h1 class="header center orange-text">Finde das richtige Language Model für dein Machine
+            <h1 class="header center orange-text">Finde die richtigen Lösungen für dein Machine
                 Learning-Projekt</h1>
             <div class="row center">
                 <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste
@@ -37,10 +37,18 @@
             <!--   Specification Section   -->
             <div class="row">
                 <div class="input-field col s12 m4">
-                    <select id="language">
+                    <select id="language" multiple>
                         <option value="" disabled selected>Sprachen</option>
-                        <option value="1">1 Sprache</option>
-                        <option value="2">2 oder mehr Sprachen</option>
+                        <option value="german">Deutsch</option>
+                        <option value="english">Englisch</option>
+                        <option value="chinese">Chinesisch</option>
+                        <option value="japanese">Japanisch</option>
+                        <option value="french">Französisch</option>
+                        <option value="swedish">Schwedisch</option>
+                        <option value="spanish">Spanisch</option>
+                        <option value="russian">Russisch</option>
+                        <option value="turkish">Türkisch</option>
+                        <option value="arabic">Arabisch</option>
                     </select>
                     <label for="language">Sprachen</label>
                 </div>
@@ -48,24 +56,23 @@
                 <div class="input-field col s6 m4">
                     <select id="length">
                         <option value="" disabled selected>Länge der Texte</option>
-                        <option value="10">< 10 Wörter</option>
                         <option value="100">< 100 Wörter</option>
-                        <option value="1000">< 1.000 Wörte</option>
-                        <option value="10000">< 10.000 Wörter</option>
-                        <option value="10001">> 10.000 Wörter</option>
+                        <option value="1000">< 1.000 Wörter</option>
+                        <option value="1001">> 1.000 Wörter</option>
                     </select>
                     <label for="length">Länge der Texte</label>
                 </div>
 
                 <div class="input-field col s6 m4">
-                    <select id="data">
-                        <option value="" disabled selected>Datensätze vorhanden</option>
-                        <option value="1000">< 1.000</option>
-                        <option value="100000">< 100.000</option>
-                        <option value="1000000">< 1.000.000</option>
-                        <option value="1000001">> 1.000.000</option>
+                    <select id="use" multiple>
+                        <option value="" disabled selected>Aufgaben</option>
+                        <option value="classification">Token/Text-Klassifizierung</option>
+                        <option value="questions">Frage-Antwort</option>
+                        <option value="sum">Zusammenfassen</option>
+                        <option value="translate">Übersetzen</option>
+                        <option value="generation">Textgenerierung</option>
                     </select>
-                    <label for="data">Trainingsdaten</label>
+                    <label for="use">Zu erfüllende Aufgaben</label>
                 </div>
 
                 <div class="input-field col s12 m6">
@@ -105,7 +112,6 @@
                         <th class="model-description">Beschreibung</th>
                         <th>Model-Download</th>
                         <th>Paper</th>
-                        <th>Einsatzgebiet</th>
                     </tr>
                     </thead>
 
@@ -140,13 +146,8 @@
 <script>
     $(document).ready(function () {
         $('select').formSelect();
+        $('.tooltipped').tooltip();
     });
-
-    $('#language').prop('selectedIndex',0);
-    $('#length').prop('selectedIndex',0);
-    $('#data').prop('selectedIndex',0);
-    $('#mistakes').prop('selectedIndex',0);
-    $('#context').prop('selectedIndex',0);
 </script>
 </body>
 </html>
