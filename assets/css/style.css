@@ -35,3 +35,18 @@ table td, table th {
 .divider {
     margin-bottom: 3em;
 }
+
+.queue-image {
+    width: 70px;
+    max-width: 70px;
+}
+
+.queue-name{
+     width: 100px;
+     max-width: 100px;
+}
+
+.queue-desc{
+    width: 250px;
+    max-width: 250px;
+}

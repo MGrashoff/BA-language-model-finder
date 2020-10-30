@@ -92,10 +92,10 @@ function fillTable() {
 
             html += '' +
                 '<tr>' +
-                '<td>' + modelsJSON[i].name + '-' + language + '</td>' +
-                '<td><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
-                '<td>' + modelsJSON[i].description.substring(0, 120) + '...' + '</td>' +
-                '<td><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
+                '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + '-' + language + '</td>' +
+                '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
+                '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
+                '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
                 '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
                 '</tr>';
         }
