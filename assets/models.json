@@ -15,11 +15,8 @@
       {"swedish": "https://huggingface.co/KB/bert-base-swedish-cased"},
       {"spanish": "https://huggingface.co/dccuchile/bert-base-spanish-wwm-uncased"}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "true"
   },
   {
     "name": "DistilBERT",
@@ -35,11 +32,8 @@
       {"chinese": "https://huggingface.co/adamlin/bert-distil-chinese"},
       {"spanish": "https://huggingface.co/mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "true"
   },
   {
     "name": "RoBERTa",
@@ -53,11 +47,8 @@
       {"chinese": "https://huggingface.co/hfl/chinese-roberta-wwm-ext"},
       {"russian": "https://huggingface.co/blinoff/roberta-base-russian-v0"}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "true"
   },
   {
     "name": "ALBERT",
@@ -73,11 +64,8 @@
       {"turkish": "https://huggingface.co/loodos/albert-base-turkish-uncased"},
       {"arabic": "https://huggingface.co/kuisailab/albert-base-arabic"}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "true"
   },
   {
     "name": "XLNet",
@@ -90,11 +78,8 @@
       {"english": "https://huggingface.co/xlnet-base-cased"},
       {"chinese": "https://huggingface.co/hfl/chinese-xlnet-base"}
     ],
-    "specs": {
-      "length": 1001,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments", "texts", "books"],
+    "context": "true"
   },
   {
     "name": "T5",
@@ -106,11 +91,8 @@
     "languages": [
       {"english": "https://huggingface.co/t5-base"}
     ],
-    "specs": {
-      "length": 1001,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments", "texts", "books"],
+    "context": "true"
   },
   {
     "name": "GPT-2",
@@ -123,11 +105,8 @@
       {"english": "https://huggingface.co/gpt2"},
       {"german": "https://huggingface.co/anonymous-german-nlp/german-gpt2"}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "true",
-      "context": "true"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "true"
   },
   {
     "name": "fastText",
@@ -141,11 +120,8 @@
       {"multi": "https://fasttext.cc/docs/en/crawl-vectors.html"},
       {"english": "https://fasttext.cc/docs/en/english-vectors.html"}
     ],
-    "specs": {
-      "length": 1001,
-      "mistakes": "true",
-      "context": "false"
-    }
+    "textTypes": ["words", "comments", "texts", "books"],
+    "context": "false"
   },
   {
     "name": "Word2Vec",
@@ -157,10 +133,7 @@
     "languages": [
       {"multi": ""}
     ],
-    "specs": {
-      "length": 100,
-      "mistakes": "false",
-      "context": "false"
-    }
+    "textTypes": ["words", "comments"],
+    "context": "false"
   }
 ]

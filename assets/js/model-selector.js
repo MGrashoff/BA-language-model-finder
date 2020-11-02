@@ -2,9 +2,8 @@ var modelsJSON = null;
 var selectorValues = {
     "started": false,
     "languages": "",
-    "length": "",
     "use": "",
-    "mistakes": "",
+    "textTypes": "",
     "context": ""
 };
 
@@ -24,14 +23,6 @@ $('#language').on('change', function () {
     checkSelectors();
 });
 
-$('#length').on('change', function () {
-    console.log('Length: ', $(this).val());
-    selectorValues.started = true;
-    selectorValues.length = $(this).val();
-    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
-    checkSelectors();
-});
-
 $('#use').on('change', function () {
     console.log('Use: ', $(this).val());
     selectorValues.started = true;
@@ -40,10 +31,10 @@ $('#use').on('change', function () {
     checkSelectors();
 });
 
-$('#mistakes').on('change', function () {
-    console.log('Mistakes: ', $(this).val());
+$('#text-type').on('change', function () {
+    console.log('Text-Type: ', $(this).val());
     selectorValues.started = true;
-    selectorValues.mistakes = $(this).val();
+    selectorValues.textTypes = $(this).val();
     localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
     checkSelectors();
 });
@@ -62,10 +53,9 @@ $('#search').on('click', function () {
 });
 
 function checkSelectors() {
-    if(selectorValues.language !== "" &&
-        selectorValues.length !== "" &&
-        selectorValues.data !== "" &&
-        selectorValues.mistakes !== "" &&
+    if(selectorValues.languages !== "" &&
+        selectorValues.textTypes !== "" &&
+        selectorValues.use !== "" &&
         selectorValues.context !== "") {
         $('#search').removeClass('disabled');
     }
@@ -74,21 +64,22 @@ function checkSelectors() {
 function fillTable() {
     console.log(selectorValues);
     $('#table-body').empty();
+    var lmFound = false;
 
     for (var i = 0; i < modelsJSON.length; i++) {
         var html = '';
-        var specs = modelsJSON[i].specs;
-        var use = modelsJSON[i].use;
-        var languages = modelsJSON[i].languages;
+        var specs = modelsJSON[i];
+        var use = specs.use;
+        var textTypes = specs.textTypes;
+        var languages = specs.languages;
         var check = checkLanguage(languages);
         var language = check[0];
         var iterator = check[1];
 
         if(selectorValues.started === false ||
-            ((specs.length == selectorValues.length || specs.length >= selectorValues.length) &&
-                specs.mistakes == selectorValues.mistakes &&
-                specs.context == selectorValues.context) &&
-            checkUse(use) && check !== false) {
+            (specs.context == selectorValues.context) &&
+            checkUse(use) && check !== false && checkTextTypes(textTypes)) {
+            lmFound = true;
 
             html += '' +
                 '<tr>' +
@@ -100,15 +91,28 @@ function fillTable() {
                 '</tr>';
         }
 
-        if(html !== '') {
+        if (html !== '') {
             $("#table-body").append(html);
         }
+    }
+
+    if (!lmFound) {
+        $("#table-body").append('<tr><td><p>Keine Ergebnisse gefunden</p></td></tr>');
     }
 }
 
 function checkUse(modelUseCases) {
     for (var i = 0; i < selectorValues.use.length; i++) {
         if (!modelUseCases.includes(selectorValues.use[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkTextTypes(modelTextType) {
+    for (var i = 0; i < selectorValues.textTypes.length; i++) {
+        if (!modelTextType.includes(selectorValues.textTypes[i])) {
             return false;
         }
     }

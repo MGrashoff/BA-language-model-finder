@@ -36,7 +36,7 @@
 
             <!--   Specification Section   -->
             <div class="row">
-                <div class="input-field col s12 m4">
+                <div class="input-field col s12 m6">
                     <select id="language" multiple>
                         <option value="" disabled selected>Sprachen</option>
                         <option value="german">Deutsch</option>
@@ -53,17 +53,7 @@
                     <label for="language">Sprachen</label>
                 </div>
 
-                <div class="input-field col s6 m4">
-                    <select id="length">
-                        <option value="" disabled selected>Länge der Texte</option>
-                        <option value="100">< 100 Wörter</option>
-                        <option value="1000">< 1.000 Wörter</option>
-                        <option value="1001">> 1.000 Wörter</option>
-                    </select>
-                    <label for="length">Länge der Texte</label>
-                </div>
-
-                <div class="input-field col s6 m4">
+                <div class="input-field col s12 m6">
                     <select id="use" multiple>
                         <option value="" disabled selected>Aufgaben</option>
                         <option value="classification">Token/Text-Klassifizierung</option>
@@ -76,12 +66,14 @@
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <select id="mistakes">
-                        <option value="" disabled selected>Rechtschreibfehler</option>
-                        <option value="true">Können vorkommen</option>
-                        <option value="false">Nein, sehr unwahrscheinlich</option>
+                    <select id="text-type" multiple>
+                        <option value="" disabled selected>Art der Texte</option>
+                        <option value="words">Einzelne Wörter/Sätze (< 10 Wörter)</option>
+                        <option value="comments">(Nutzer-)Kommentare (< 100 Wörter)</option>
+                        <option value="texts">Texte (< 1000 Wörter)</option>
+                        <option value="books">Bücher/lange Texte (> 1000 Wörter)</option>
                     </select>
-                    <label for="mistakes">Sind Rechtschreibfehler realistisch?</label>
+                    <label for="text-type">Art der Texte</label>
                 </div>
 
                 <div class="input-field col s12 m6">
