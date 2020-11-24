@@ -23,11 +23,10 @@
 <main>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-            <h1 class="header center orange-text">Finde die richtigen Lösungen für dein Machine
-                Learning-Projekt</h1>
+            <h1 class="header center orange-text">Language Model in der Nutzerkommentarverarbeitung</h1>
             <div class="row center">
-                <h5 class="header col s12 light">Wähle deine Spezifikationen aus den Dropdown-Menüs aus, um eine Liste
-                    von möglichen Language Modeln für dein ML-Projekt zu erhalten. Im Anschluss erhälst du weitere Vorschläge für Message Queues und das Model Management.</h5>
+                <h5 class="header col s12 light">Wähle Spezifikationen aus den Dropdown-Menüs aus, um eine Liste
+                    von möglichen Language Models für die Nutzerkommentarverarbeitung zu erhalten.</h5>
             </div>
         </div>
     </div>
@@ -37,52 +36,42 @@
             <!--   Specification Section   -->
             <div class="row">
                 <div class="input-field col s12 m6">
-                    <select id="language" multiple>
+                    <select id="language">
                         <option value="" disabled selected>Sprachen</option>
                         <option value="german">Deutsch</option>
                         <option value="english">Englisch</option>
-                        <option value="chinese">Chinesisch</option>
-                        <option value="japanese">Japanisch</option>
-                        <option value="french">Französisch</option>
-                        <option value="swedish">Schwedisch</option>
-                        <option value="spanish">Spanisch</option>
-                        <option value="russian">Russisch</option>
-                        <option value="turkish">Türkisch</option>
-                        <option value="arabic">Arabisch</option>
+                        <option value="multi">Multilingual</option>
                     </select>
                     <label for="language">Sprachen</label>
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <select id="use" multiple>
-                        <option value="" disabled selected>Aufgaben</option>
-                        <option value="classification">Token/Text-Klassifizierung</option>
-                        <option value="questions">Frage-Antwort</option>
-                        <option value="sum">Zusammenfassen</option>
-                        <option value="translate">Übersetzen</option>
-                        <option value="generation">Textgenerierung</option>
+                    <select id="training">
+                        <option value="" disabled selected>Model Trainings-Status</option>
+                        <option value="untrained">Untrainiert</option>
+                        <option value="trained">Vortrainiert</option>
                     </select>
-                    <label for="use">Zu erfüllende Aufgaben</label>
+                    <label for="training">Model Trainings-Status</label>
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <select id="text-type" multiple>
-                        <option value="" disabled selected>Art der Texte</option>
-                        <option value="words">Einzelne Wörter/Sätze (< 10 Wörter)</option>
-                        <option value="comments">(Nutzer-)Kommentare (< 100 Wörter)</option>
-                        <option value="texts">Texte (< 1000 Wörter)</option>
-                        <option value="books">Bücher/lange Texte (> 1000 Wörter)</option>
+                    <select id="gpu">
+                        <option value="" disabled selected>GPU</option>
+                        <option value="0">Nicht vorhanden (nicht empfohlen)</option>
+                        <option value="8">< 8 GB Speicher</option>
+                        <option value="24">< 24 GB Speicher</option>
+                        <option value="cluster">> 24 GB Speicher (und/oder GPU-Cluster)</option>
                     </select>
-                    <label for="text-type">Art der Texte</label>
+                    <label for="gpu">GPU</label>
                 </div>
 
                 <div class="input-field col s12 m6">
-                    <select id="context">
-                        <option value="" disabled selected>Reihenfolge der Wörter/Kontext</option>
-                        <option value="true">Ja, der Kontext der Wörter ist wichtig</option>
-                        <option value="false">Nein, der Kontext kann ignoriert werden</option>
+                    <select id="textLength">
+                        <option value="" disabled selected>Länge der Nutzerkommentare</option>
+                        <option value="1000">< 512 Wörter</option>
+                        <option value="1001">> 512 Wörter</option>
                     </select>
-                    <label for="context">Kontext</label>
+                    <label for="textLength">Länge der Nutzerkommentare</label>
                 </div>
             </div>
             <div class="row center">
@@ -110,126 +99,15 @@
                     <tbody id="table-body">
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="divider"></div>
-    </div>
+                <div class="container">
+                    <div class="divider"></div>
+                </div>
 
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <h5 class="header col s12 light">Message Queues bieten eine gute Grundlage um verschiedene Daten durch bzw.
-                    in eine ML-Pipeline zu bekommen. Besonders in der Textverarbeitung ist die 1 zu 1 weitergabe der Nachricht in die Verarbeitung ein großer Vorteil.
-                    Folgend werde ich drei verschiedene Message Queue-Lösungen vorstellen.
-                </h5>
-            </div>
-
-            <div class="row">
-                <table class="striped" id="queue-table">
-                    <thead>
-                    <tr>
-                        <th class="queue-image"></th>
-                        <th class="queue-name">Name</th>
-                        <th>Download-Page</th>
-                        <th class="queue-desc">Beschreibung</th>
-                        <th>Vorteile</th>
-                        <th>Nachteile</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td class="queue-image"><img src="https://atishaya11.github.io/static/img/rabbitmq.png" alt="RabbitMQ" style="width: 70px;"></td>
-                            <td class="queue-name">RabbitMQ</td>
-                            <td><a href="https://www.rabbitmq.com/download.html">https://www.rabbitmq.com/download.html</a></td>
-                            <td class="queue-desc">RabbitMQ ist eine Open-Source Message Queue geschrieben in der Programmiersprache Erlang, basierend auf dem AMQP-Standard.
-                                Es existieren RabbitMQ-Bibliotheken für gängige Sprachen wie Python, Java, Go und JavaScript.</td>
-                            <td>Leicht zu implementieren und konfigurieren, AMQP-Standard, ausführliche Dokumentation</td>
-                            <td>Erlang-Laufzeitumgebung, Clusterung aufwendig</td>
-                        </tr>
-                        <tr>
-                            <td class="queue-image"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg" alt="Apache Kafka" style="width: 70px;"></td>
-                            <td class="queue-name">Apache Kafka</td>
-                            <td><a href="https://kafka.apache.org/quickstart">https://kafka.apache.org/quickstart</a></td>
-                            <td class="queue-desc">Kafka ist eine verteiltes Nachrichtensystem, welches sich durch Skalierbarkeit und Redundanz auszeichnet.
-                                Durch das Verteilen auf mehrere Instanzen kann eine hohe Verfügbarkeit und Resistenz gegenüber Ausfällen gewährleistet werden.
-                                Nachrichten werden zwischen den Instanzen synchronisiert, was die Gefahr von Nachrichtenverlust minimiert.</td>
-                            <td>Hohe Skalierbarkeit, verteilt</td>
-                            <td>Zookeeper, keine Überwachungs- und Management-Tools </td>
-                        </tr>
-                        <tr>
-                            <td class="queue-image"><img src="https://pulsar.apache.org/img/pulsar.svg" alt="Apache Pulsar" style="width: 70px;"></td>
-                            <td class="queue-name">Apache Pulsar</td>
-                            <td><a href="https://pulsar.apache.org/en/download/">https://pulsar.apache.org/en/download/</a></td>
-                            <td class="queue-desc">Apache Pulsar ist ein verteiltes Nachrichtensystem, welches den Fokus auf konsequente Nachrichtenzustellung legt.
-                                Ursprünglich entwickelt von Yahoo, ist es nun ein zum Großteil von der Community gepflegtes System.</td>
-                            <td>Hohe Skalierbarkeit, Ausfallsicher/Robust</td>
-                            <td>Viele Abhängigkeiten (Zookeeper, BookKeeper, RocksDB), grundlegende Implementierung zeitaufwändig</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="divider"></div>
-    </div>
-
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <h5 class="header col s12 light">Erstellte oder trainierte ML-Models können mehrere GB an Speicher beanspruchen.
-                    Um das Managen, Bereitstellen und Testen dieser Models zu vereinfachen gibt es Technologien wie MLflow und DVC.
-                    Vergleichbar mit dem Abschnitt zu Message Queues werden diese Technologien kurz beschrieben und Vor- sowie Nachteile aufgezeigt.
-                </h5>
-            </div>
-
-            <div class="row">
-                <table class="striped" id="management-table">
-                    <thead>
-                    <tr>
-                        <th class="queue-image"></th>
-                        <th class="queue-name">Name</th>
-                        <th>Download-Page</th>
-                        <th class="queue-desc">Beschreibung</th>
-                        <th>Vorteile</th>
-                        <th>Nachteile</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <td class="queue-image"><img src="https://avatars2.githubusercontent.com/u/39572954?s=400&v=4" alt="DVC" style="width: 70px;"></td>
-                        <td class="queue-name">DVC</td>
-                        <td><a href="https://dvc.org/">https://dvc.org/</a></td>
-                        <td class="queue-desc">"Data Version Control" (DVC) ermöglicht es ML-Modelle und Datensätze zu versionieren und extern speichern zu können.
-                            DVC erfüllt diese Aufgaben auch bei Dateien im Terabyte-Bereich, ohne dabei an Geschwindigkeit gegenüber etablierten Code-Versionierungssystemen zu verlieren.
-                            DVC muss, vergleichbar zu Git, für jedes Projekt neu initialisiert werden und wird vollständig über die Kommandozeile bedient.</td>
-                        <td>Pipeline-Erstellung durch YAML-Dateien, kompatibel mit allen gängigen Cloud- und Serverlösungen zum Speichern der Dateien, keine Abhängigkeit zu einer Programmiersprache</td>
-                        <td>Visualisierungs-Tools nur in einer ersten Beta verfügbar</td>
-                    </tr>
-                    <tr>
-                        <td class="queue-image"><img src="https://datasolut.com/wp-content/uploads/2019/11/MLFlow-logo_white.png" alt="MLflow" style="width: 70px;"></td>
-                        <td class="queue-name">MLflow</td>
-                        <td><a href="https://mlflow.org/docs/latest/quickstart.html">https://mlflow.org/docs/latest/quickstart.html</a></td>
-                        <td class="queue-desc">MLflow ist ein ML-Framework um Training zu Dokumentieren, Modelle zu speichern und ML-Pipelines zu erstellen.
-                            "MLflow’s core philosophy is to put as few constraints as possible on your workflow",
-                            ohne lange Konfiguration soll es möglich sein, MLflow in ein bestehendes Projekt zu integrieren,
-                            um die Arbeit mit ML-Modellen zu vereinheitlichen und zu vereinfachen.</td>
-                        <td>Schnelle Implementation in bestehende Projekte möglich, gute Dokumentation, ausführliche visuelle Darstellung durch "mlflow ui"</td>
-                        <td>Wenige APIs oder Bibliotheken, nur die Python API enthält alle Features</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="row" style="margin-top: 5em;">Für weitere Informationen zu den Language Modeln, Message Queues, Model Management-Lösungen und den hier angegebenen Spezifikationen,
-                verweise ich auf meine Bachelorarbeit:
-                <a href="https://github.com/MGrashoff/BA-Mats-Grashoff" target="_blank">https://github.com/MGrashoff/BA-Mats-Grashoff</a>.
+                <div class="row" style="margin-top: 5em;">Für weitere Informationen zu den Language Models und den hier angegebenen Spezifikationen,
+                    verweise ich auf meine Bachelorarbeit:
+                    <a href="https://github.com/MGrashoff/BA-Mats-Grashoff" target="_blank">https://github.com/MGrashoff/BA-Mats-Grashoff</a>.
+                </div>
             </div>
         </div>
     </div>

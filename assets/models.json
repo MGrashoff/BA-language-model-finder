@@ -1,139 +1,213 @@
 [
   {
     "name": "BERT",
-    "image": "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2019/04/09110726/Bert-Head.png",
     "github": "https://github.com/google-research/bert",
     "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
     "paper": "https://arxiv.org/abs/1810.04805",
-    "use": ["classification", "questions"],
+    "languages": [
+      {"multi": ""}
+    ],
+    "textLength": 1000,
+    "training": "untrained",
+    "gpu": "cluster"
+  },
+  {
+    "name": "BERT-base",
+    "github": "https://github.com/google-research/bert",
+    "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
+    "paper": "https://arxiv.org/abs/1810.04805",
     "languages": [
       {"multi": "https://huggingface.co/bert-base-multilingual-cased"},
       {"english": "https://huggingface.co/bert-base-uncased"},
-      {"german": "https://huggingface.co/bert-base-german-cased"},
-      {"chinese": "https://huggingface.co/bert-base-chinese"},
-      {"french": "https://huggingface.co/dbmdz/bert-base-french-europeana-cased"},
-      {"swedish": "https://huggingface.co/KB/bert-base-swedish-cased"},
-      {"spanish": "https://huggingface.co/dccuchile/bert-base-spanish-wwm-uncased"}
+      {"german": "https://huggingface.co/bert-base-german-cased"}
     ],
-    "textTypes": ["words", "comments"],
-    "context": "true"
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "8"
   },
   {
-    "name": "DistilBERT",
-    "image": "https://huggingface.co/favicon.ico",
+    "name": "BERT-large",
+    "github": "https://github.com/google-research/bert",
+    "description": "BERT steht für \"Bidirectional Encoder Representations from Transformers\" und wurde 2018 von Jacob Devlin et al. bei Google entwickelt und mit Hilfe der Texte von Wikipedia (2,5 Milliarden Wörter) und dem BookCorpus(800 Millionen Wörter) trainiert. BERT nutzt eine weiterentwickelte Form der Transformer-Architektur und erstellt Embeddings indem er mit zwei Unsupervised Learning-Aufgaben trainiert.",
+    "paper": "https://arxiv.org/abs/1810.04805",
+    "languages": [
+      {"english": "https://huggingface.co/bert-large-cased"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "cluster"
+  },
+  {
+    "name": "DistilBERT-base",
     "github": "https://github.com/huggingface/transformers/tree/master/examples/distillation",
     "description": "DistilBERT wurde von huggingface.co entwickelt um dem stetigen Wachstum der NLP-Modelle entgegen zu wirken. Basierend auf dem BERT-Modell, ist DistilBERT ein reduziertes Modell, welches traniert wurde, um das Verhalten des großen Modells (in diesem Fall BERT) zu reproduzieren.",
     "paper": "https://arxiv.org/abs/1910.01108",
-    "use": ["classification", "questions"],
     "languages": [
       {"multi": "https://huggingface.co/distilbert-base-multilingual-cased"},
-      {"english": "https://huggingface.co/distilbert-base-uncased"},
-      {"german": "https://huggingface.co/distilbert-base-german-cased"},
-      {"chinese": "https://huggingface.co/adamlin/bert-distil-chinese"},
-      {"spanish": "https://huggingface.co/mrm8488/distill-bert-base-spanish-wwm-cased-finetuned-spa-squad2-es"}
+      {"english": "https://huggingface.co/distilbert-base-cased"},
+      {"german": "https://huggingface.co/distilbert-base-german-cased"}
     ],
-    "textTypes": ["words", "comments"],
-    "context": "true"
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "8"
   },
   {
     "name": "RoBERTa",
-    "image": "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2019/04/09110726/Bert-Head.png",
     "github": "https://github.com/pytorch/fairseq/tree/master/examples/roberta",
     "description": "RoBERTa basiert auf dem BERT-Modell, welches mit Hilfe einer Maskierungsstrategie erlernt, versteckte (maskierte) Teile eines Textes zu rekonstruieren. RoBERTa nutzt diese Maskierung, wird im Vergleich zu BERT jedoch mit deutlich kleineren Batches, mehr Daten und für einen längeren Zeitraum trainiert. Dies erlaubt eine größere Genauigkeit in ML-Aufgaben.",
     "paper": "https://arxiv.org/abs/1907.11692",
-    "use": ["classification", "questions"],
     "languages": [
-      {"english": "https://huggingface.co/roberta-base"},
-      {"chinese": "https://huggingface.co/hfl/chinese-roberta-wwm-ext"},
-      {"russian": "https://huggingface.co/blinoff/roberta-base-russian-v0"}
+      {"multi": ""}
     ],
-    "textTypes": ["words", "comments"],
-    "context": "true"
+    "textLength": 1000,
+    "training": "untrained",
+    "gpu": "cluster"
   },
   {
-    "name": "ALBERT",
-    "image": "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2019/04/09110726/Bert-Head.png",
+    "name": "RoBERTa-base",
+    "github": "https://github.com/pytorch/fairseq/tree/master/examples/roberta",
+    "description": "RoBERTa basiert auf dem BERT-Modell, welches mit Hilfe einer Maskierungsstrategie erlernt, versteckte (maskierte) Teile eines Textes zu rekonstruieren. RoBERTa nutzt diese Maskierung, wird im Vergleich zu BERT jedoch mit deutlich kleineren Batches, mehr Daten und für einen längeren Zeitraum trainiert. Dies erlaubt eine größere Genauigkeit in ML-Aufgaben.",
+    "paper": "https://arxiv.org/abs/1907.11692",
+    "languages": [
+      {"english": "https://huggingface.co/roberta-base"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "8"
+  },
+  {
+    "name": "RoBERTa-large",
+    "github": "https://github.com/pytorch/fairseq/tree/master/examples/roberta",
+    "description": "RoBERTa basiert auf dem BERT-Modell, welches mit Hilfe einer Maskierungsstrategie erlernt, versteckte (maskierte) Teile eines Textes zu rekonstruieren. RoBERTa nutzt diese Maskierung, wird im Vergleich zu BERT jedoch mit deutlich kleineren Batches, mehr Daten und für einen längeren Zeitraum trainiert. Dies erlaubt eine größere Genauigkeit in ML-Aufgaben.",
+    "paper": "https://arxiv.org/abs/1907.11692",
+    "languages": [
+      {"english": "https://huggingface.co/roberta-base"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "24"
+  },
+  {
+    "name": "ALBERT-base",
     "github": "https://github.com/google-research/albert",
     "description": "ALBERT steht für \"A Lite BERT\" und versucht, die Größe des BERT-Modells zu verringern, ohne an Genauigkeit zu verlieren. Dies wird durch eine Paramterübergabe zwischen den Schichten des Transformer-basierten neuronalen Netzes erlangt.",
     "paper": "https://arxiv.org/abs/1909.11942",
-    "use": ["classification", "questions"],
     "languages": [
-      {"english": "https://huggingface.co/albert-base-v2"},
-      {"japanese": "https://huggingface.co/ALINEAR/albert-japanese-v2"},
-      {"chinese": "https://huggingface.co/voidful/albert_chinese_tiny"},
-      {"turkish": "https://huggingface.co/loodos/albert-base-turkish-uncased"},
-      {"arabic": "https://huggingface.co/kuisailab/albert-base-arabic"}
+      {"english": "https://huggingface.co/albert-base-v2"}
     ],
-    "textTypes": ["words", "comments"],
-    "context": "true"
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "8"
+  },
+  {
+    "name": "ALBERT-large",
+    "github": "https://github.com/google-research/albert",
+    "description": "ALBERT steht für \"A Lite BERT\" und versucht, die Größe des BERT-Modells zu verringern, ohne an Genauigkeit zu verlieren. Dies wird durch eine Paramterübergabe zwischen den Schichten des Transformer-basierten neuronalen Netzes erlangt.",
+    "paper": "https://arxiv.org/abs/1909.11942",
+    "languages": [
+      {"english": "https://huggingface.co/albert-large-v2"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "24"
   },
   {
     "name": "XLNet",
-    "image": "",
     "github": "https://github.com/zihangdai/xlnet",
     "description": "XLNet wurde 2019 von Zhilin Yang et.al. entwickelt und basiert auf einem \"permutation language modeling\"-Prozess. Durch das Vertauschen der Wörter führt dazu, dass XLNet Abhängigkeiten in verschiedenen Kombinationen erlernt.",
     "paper": "https://arxiv.org/abs/1906.08237",
-    "use": ["classification", "questions"],
     "languages": [
-      {"english": "https://huggingface.co/xlnet-base-cased"},
-      {"chinese": "https://huggingface.co/hfl/chinese-xlnet-base"}
+      {"multi": ""}
     ],
-    "textTypes": ["words", "comments", "texts", "books"],
-    "context": "true"
+    "textLength": 1000,
+    "training": "untrained",
+    "gpu": "cluster"
+  },
+  {
+    "name": "XLNet-base",
+    "github": "https://github.com/zihangdai/xlnet",
+    "description": "XLNet wurde 2019 von Zhilin Yang et.al. entwickelt und basiert auf einem \"permutation language modeling\"-Prozess. Durch das Vertauschen der Wörter führt dazu, dass XLNet Abhängigkeiten in verschiedenen Kombinationen erlernt.",
+    "paper": "https://arxiv.org/abs/1906.08237",
+    "languages": [
+      {"english": "https://huggingface.co/xlnet-base-cased"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "8"
+  },
+  {
+    "name": "XLNet-large",
+    "github": "https://github.com/zihangdai/xlnet",
+    "description": "XLNet wurde 2019 von Zhilin Yang et.al. entwickelt und basiert auf einem \"permutation language modeling\"-Prozess. Durch das Vertauschen der Wörter führt dazu, dass XLNet Abhängigkeiten in verschiedenen Kombinationen erlernt.",
+    "paper": "https://arxiv.org/abs/1906.08237",
+    "languages": [
+      {"english": "https://huggingface.co/xlnet-large-cased"}
+    ],
+    "textLength": 1000,
+    "training": "trained",
+    "gpu": "24"
   },
   {
     "name": "T5",
-    "image": "",
     "github": "https://github.com/google-research/text-to-text-transfer-transformer",
     "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
     "paper": "https://arxiv.org/abs/1910.10683",
-    "use": ["classification", "sum", "translate"],
+    "languages": [
+      {"multi": ""}
+    ],
+    "textLength": 1001,
+    "training": "untrained",
+    "gpu": "cluster"
+  },
+  {
+    "name": "T5-base",
+    "github": "https://github.com/google-research/text-to-text-transfer-transformer",
+    "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
+    "paper": "https://arxiv.org/abs/1910.10683",
     "languages": [
       {"english": "https://huggingface.co/t5-base"}
     ],
-    "textTypes": ["words", "comments", "texts", "books"],
-    "context": "true"
+    "textLength": 1001,
+    "training": "trained",
+    "gpu": "8"
   },
   {
-    "name": "GPT-2",
-    "image": "",
-    "github": "https://github.com/openai/gpt-2",
-    "description": "\"Generative Pretrained Transformer 2\" (GPT-2) ist ein von OpenAI entwickeltes Sprachmodell, mit dem Zweck, das nächste Wort innerhalb eines Textes vorherzusagen. Mit seinen 1,5 Milliarden Parametern soll GPT-2 in der Lage sein, Texte zu verfassen, die nicht von denen eines Menschen zu unterscheiden sind.",
-    "paper": "https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
-    "use": ["generation"],
+    "name": "T5-large",
+    "github": "https://github.com/google-research/text-to-text-transfer-transformer",
+    "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
+    "paper": "https://arxiv.org/abs/1910.10683",
     "languages": [
-      {"english": "https://huggingface.co/gpt2"},
-      {"german": "https://huggingface.co/anonymous-german-nlp/german-gpt2"}
+      {"english": "https://huggingface.co/t5-large"}
     ],
-    "textTypes": ["words", "comments"],
-    "context": "true"
+    "textLength": 1001,
+    "training": "trained",
+    "gpu": "24"
   },
   {
     "name": "fastText",
-    "image": "https://miro.medium.com/max/1200/1*xRvz53WKr4koIKgmJZoRFQ.png",
     "github": "https://github.com/facebookresearch/fastText",
     "description": "Entwickelt wurde fastText in den \"Facebook AI Reasearch\" (FAIR) Laboren. Jedes Wort welches fastText verarbeitet, wird in ein \"n-gram\" von Wörtern zerlegt, um daraus eine Vektorrepräsentation zu erzeugen.",
     "download": "https://fasttext.cc/docs/en/english-vectors.html",
     "paper": "https://arxiv.org/abs/1607.04606",
-    "use": ["classification"],
+    "languages": [
+      {"multi": ""}
+    ],
+    "textLength": 1001,
+    "training": "untrained",
+    "gpu": "8"
+  },
+  {
+    "name": "fastText-trained",
+    "github": "https://github.com/facebookresearch/fastText",
+    "description": "Entwickelt wurde fastText in den \"Facebook AI Reasearch\" (FAIR) Laboren. Jedes Wort welches fastText verarbeitet, wird in ein \"n-gram\" von Wörtern zerlegt, um daraus eine Vektorrepräsentation zu erzeugen.",
+    "download": "https://fasttext.cc/docs/en/english-vectors.html",
+    "paper": "https://arxiv.org/abs/1607.04606",
     "languages": [
       {"multi": "https://fasttext.cc/docs/en/crawl-vectors.html"},
       {"english": "https://fasttext.cc/docs/en/english-vectors.html"}
     ],
-    "textTypes": ["words", "comments", "texts", "books"],
-    "context": "false"
-  },
-  {
-    "name": "Word2Vec",
-    "image": "",
-    "github": "https://github.com/tmikolov/word2vec",
-    "description": "Word2Vec besteht aus trainierten Modellen, die auf neuronalen Netzen basieren, um Wörter oder ganze Sätze in ihrem linguistischen Kontext zu (re-)konstruieren. Dabei benutzt Word2Vec zwei Methoden: \"Skip-Gram\" und \"Common Bag Of Words\" (CBOW)",
-    "paper": "https://arxiv.org/abs/1301.3781",
-    "use": ["classification"],
-    "languages": [
-      {"multi": ""}
-    ],
-    "textTypes": ["words", "comments"],
-    "context": "false"
+    "textLength": 1001,
+    "training": "trained",
+    "gpu": "8"
   }
 ]
