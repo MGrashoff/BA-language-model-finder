@@ -73,19 +73,19 @@ function fillTable() {
         var gpu = specs.gpu;
         var textLength = specs.textLength;
         var languages = specs.languages;
-        var check = checkLanguage(languages);
+        var check = checkLanguage(languages, selectorValues.training);
         var language = check[0];
         var iterator = check[1];
 
         if(selectorValues.started === true &&
             (training === selectorValues.training) &&
-            (gpu === selectorValues.gpu) &&
+            (gpu <= selectorValues.gpu) &&
             (textLength >= selectorValues.textLength) && check !== false) {
             lmFound = true;
 
             html += '' +
                 '<tr>' +
-                '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + '</td>' +
+                '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' ? '-' + language : '') + '</td>' +
                 '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
                 '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
                 '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
@@ -93,38 +93,27 @@ function fillTable() {
                 '</tr>';
         }
 
-        if (html !== '') {
+        if(html !== '') {
             $("#table-body").append(html);
         }
     }
 
-    if (!lmFound) {
+    if(!lmFound) {
         $("#table-body").append('<tr><td><p>Keine Ergebnisse gefunden</p></td></tr>');
     }
 }
 
-function checkLanguage(modelLanguages) {
-    if (modelLanguages[0].multi === '') {
+function checkLanguage(modelLanguages, training) {
+    if(training === 'untrained') {
         return ['multi', 0];
     } else {
-        if (selectorValues.languages.length > 1) {
-            for (var i = 0; i < modelLanguages.length; i++) {
-                for (var language in modelLanguages[i]) {
-                    if (language === 'multi') {
-                        return ['multi', i];
-                    }
+        for (var i = 0; i < modelLanguages.length; i++) {
+            for (var language in modelLanguages[i]) {
+                if(selectorValues.language === language) {
+                    return [language, i];
                 }
             }
-            return false;
-        } else {
-            for (var j = 0; j < modelLanguages.length; j++) {
-                for (var l in modelLanguages[j]) {
-                    if (selectorValues.languages.includes(l)) {
-                        return [l, j];
-                    }
-                }
-            }
-            return false;
         }
+        return false;
     }
 }

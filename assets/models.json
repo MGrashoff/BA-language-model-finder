@@ -9,7 +9,7 @@
     ],
     "textLength": 1000,
     "training": "untrained",
-    "gpu": "cluster"
+    "gpu": 25
   },
   {
     "name": "BERT-base",
@@ -23,7 +23,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "BERT-large",
@@ -35,7 +35,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "cluster"
+    "gpu": 24
   },
   {
     "name": "DistilBERT-base",
@@ -49,7 +49,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "RoBERTa",
@@ -61,7 +61,7 @@
     ],
     "textLength": 1000,
     "training": "untrained",
-    "gpu": "cluster"
+    "gpu": 25
   },
   {
     "name": "RoBERTa-base",
@@ -73,7 +73,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "RoBERTa-large",
@@ -85,7 +85,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "24"
+    "gpu": 24
   },
   {
     "name": "ALBERT-base",
@@ -97,7 +97,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "ALBERT-large",
@@ -109,7 +109,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "24"
+    "gpu": 24
   },
   {
     "name": "XLNet",
@@ -121,7 +121,7 @@
     ],
     "textLength": 1000,
     "training": "untrained",
-    "gpu": "cluster"
+    "gpu": 25
   },
   {
     "name": "XLNet-base",
@@ -133,7 +133,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "XLNet-large",
@@ -145,7 +145,7 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": "24"
+    "gpu": 24
   },
   {
     "name": "T5",
@@ -157,7 +157,7 @@
     ],
     "textLength": 1001,
     "training": "untrained",
-    "gpu": "cluster"
+    "gpu": 25
   },
   {
     "name": "T5-base",
@@ -169,7 +169,7 @@
     ],
     "textLength": 1001,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "T5-large",
@@ -181,7 +181,7 @@
     ],
     "textLength": 1001,
     "training": "trained",
-    "gpu": "24"
+    "gpu": 24
   },
   {
     "name": "fastText",
@@ -194,7 +194,7 @@
     ],
     "textLength": 1001,
     "training": "untrained",
-    "gpu": "8"
+    "gpu": 8
   },
   {
     "name": "fastText-trained",
@@ -208,6 +208,6 @@
     ],
     "textLength": 1001,
     "training": "trained",
-    "gpu": "8"
+    "gpu": 8
   }
 ]

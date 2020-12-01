@@ -42,36 +42,36 @@
                         <option value="english">Englisch</option>
                         <option value="multi">Multilingual</option>
                     </select>
-                    <label for="language">Sprachen</label>
-                </div>
+                    <label for="language">Sprachen <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="In welcher Sprache sind die Nutzerkommentare?">info</i></label>
+            </div>
 
                 <div class="input-field col s12 m6">
                     <select id="training">
                         <option value="" disabled selected>Model Trainings-Status</option>
-                        <option value="untrained">Untrainiert</option>
-                        <option value="trained">Vortrainiert</option>
+                        <option value="trained">pre-trained</option>
+                        <option value="untrained">untrained</option>
                     </select>
-                    <label for="training">Model Trainings-Status</label>
+                    <label for="training">Model Trainings-Status <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="Sollen die Models bereits trainiert (engl. 'pre-trained') oder untrainiert (engl. 'untrained') sein?">info</i></label>
                 </div>
 
                 <div class="input-field col s12 m6">
                     <select id="gpu">
                         <option value="" disabled selected>GPU</option>
-                        <option value="0">Nicht vorhanden (nicht empfohlen)</option>
+                        <!--<option value="0">Nicht vorhanden (nicht empfohlen)</option>-->
                         <option value="8">< 8 GB Speicher</option>
                         <option value="24">< 24 GB Speicher</option>
-                        <option value="cluster">> 24 GB Speicher (und/oder GPU-Cluster)</option>
+                        <option value="25">> 24 GB Speicher (und/oder GPU-Cluster)</option>
                     </select>
-                    <label for="gpu">GPU</label>
+                    <label for="gpu">GPU <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="Welche GPU-Speicherkapazität (Grafikkarte) steht für das Training zur Verfügung?">info</i></label>
                 </div>
 
                 <div class="input-field col s12 m6">
                     <select id="textLength">
                         <option value="" disabled selected>Länge der Nutzerkommentare</option>
-                        <option value="1000">< 512 Wörter</option>
-                        <option value="1001">> 512 Wörter</option>
+                        <option value="1000">< 512 Tokens</option>
+                        <option value="1001">> 512 Tokens</option>
                     </select>
-                    <label for="textLength">Länge der Nutzerkommentare</label>
+                    <label for="textLength">Länge der Nutzerkommentare <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="Ein Token entspricht einem Wort oder Sub-Wort, falls das gesuchte Wort nicht im Wortschatz des Models vorhanden ist.">info</i></label>
                 </div>
             </div>
             <div class="row center">
