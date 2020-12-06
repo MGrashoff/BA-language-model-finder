@@ -9,6 +9,11 @@ var selectorValues = {
 
 $.getJSON("assets/models.json", function (json) {
     modelsJSON = json;
+
+    modelsJSON.sort(function (a, b) {
+        return parseFloat(b.glue) - parseFloat(a.glue);
+    });
+
     if(localStorage.getItem("selectorValues") !== null) {
         selectorValues = JSON.parse(localStorage.getItem("selectorValues"));
         checkSelectors();
@@ -86,6 +91,7 @@ function fillTable() {
             html += '' +
                 '<tr>' +
                 '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' ? '-' + language : '') + '</td>' +
+                '<td style="width: 80px; max-width: 80px;">' + modelsJSON[i].glue + '</td>' +
                 '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
                 '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
                 '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
