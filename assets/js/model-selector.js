@@ -4,7 +4,8 @@ var selectorValues = {
     "language": "",
     "training": "",
     "gpu": "",
-    "textLength": ""
+    "textLength": "",
+    "amount": ""
 };
 
 $.getJSON("assets/models.json", function (json) {
@@ -52,6 +53,14 @@ $('#textLength').on('change', function () {
     checkSelectors();
 });
 
+$('#amount').on('change', function () {
+    console.log('Amount: ', $(this).val());
+    selectorValues.started = true;
+    selectorValues.amount = $(this).val();
+    localStorage.setItem('selectorValues', JSON.stringify(selectorValues));
+    checkSelectors();
+});
+
 $('#search').on('click', function () {
     $('#table-container').removeClass('hide');
     fillTable();
@@ -61,6 +70,7 @@ function checkSelectors() {
     if(selectorValues.language !== "" &&
         selectorValues.training !== "" &&
         selectorValues.gpu !== "" &&
+        selectorValues.amount !== "" &&
         selectorValues.textLength !== "") {
         $('#search').removeClass('disabled');
     }
@@ -70,12 +80,14 @@ function fillTable() {
     console.log(selectorValues);
     $('#table-body').empty();
     var lmFound = false;
+    var lmCount = 0;
 
     for (var i = 0; i < modelsJSON.length; i++) {
         var html = '';
         var specs = modelsJSON[i];
         var training = specs.training;
         var gpu = specs.gpu;
+        var amount = specs.amount;
         var textLength = specs.textLength;
         var languages = specs.languages;
         var check = checkLanguage(languages, selectorValues.training);
@@ -85,18 +97,24 @@ function fillTable() {
         if(selectorValues.started === true &&
             (training === selectorValues.training) &&
             (gpu <= selectorValues.gpu) &&
+            (amount <= selectorValues.amount) &&
             (textLength >= selectorValues.textLength) && check !== false) {
             lmFound = true;
+            lmCount++;
+            
+            console.log(lmCount);
 
-            html += '' +
-                '<tr>' +
-                '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' ? '-' + language : '') + '</td>' +
-                '<td style="width: 80px; max-width: 80px;">' + modelsJSON[i].glue + '</td>' +
-                '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
-                '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
-                '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
-                '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
-                '</tr>';
+            if (lmCount <= 3) {
+                html += '' +
+                    '<tr>' +
+                    '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' ? '-' + language : '') + '</td>' +
+                    '<td style="width: 80px; max-width: 80px;">' + modelsJSON[i].glue + '</td>' +
+                    '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
+                    '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
+                    '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
+                    '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
+                    '</tr>';
+            }
         }
 
         if(html !== '') {

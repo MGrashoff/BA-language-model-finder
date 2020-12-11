@@ -10,7 +10,8 @@
     "textLength": 1000,
     "training": "untrained",
     "gpu": 25,
-    "glue": 82.1
+    "glue": 82.1,
+    "amount": 10001
   },
   {
     "name": "BERT-base",
@@ -25,7 +26,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 8,
-    "glue": 79.6
+    "glue": 79.6,
+    "amount": 5000
   },
   {
     "name": "BERT-large",
@@ -38,7 +40,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 24,
-    "glue": 82.1
+    "glue": 82.1,
+    "amount": 5000
   },
   {
     "name": "DistilBERT-base",
@@ -53,7 +56,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 8,
-    "glue": 77.0
+    "glue": 77.0,
+    "amount": 5000
   },
   {
     "name": "RoBERTa",
@@ -66,7 +70,8 @@
     "textLength": 1000,
     "training": "untrained",
     "gpu": 25,
-    "glue": 88.5
+    "glue": 88.5,
+    "amount": 10001
   },
   {
     "name": "RoBERTa-base",
@@ -79,7 +84,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 8,
-    "glue": 80.5
+    "glue": 80.5,
+    "amount": 1000
   },
   {
     "name": "RoBERTa-large",
@@ -92,7 +98,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 24,
-    "glue": 88.5
+    "glue": 88.5,
+    "amount": 1000
   },
   {
     "name": "ALBERT-base",
@@ -105,7 +112,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 8,
-    "glue": 89.4
+    "glue": 89.4,
+    "amount": 10000
   },
   {
     "name": "ALBERT-large",
@@ -118,7 +126,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 24,
-    "glue": 89.4
+    "glue": 89.4,
+    "amount": 10000
   },
   {
     "name": "XLNet",
@@ -131,7 +140,8 @@
     "textLength": 1000,
     "training": "untrained",
     "gpu": 25,
-    "glue": 90.5
+    "glue": 90.5,
+    "amount": 10001
   },
   {
     "name": "XLNet-base",
@@ -144,7 +154,8 @@
     "textLength": 1000,
     "training": "trained",
     "gpu": 8,
-    "glue": 85
+    "glue": 85,
+    "amount": 1000
   },
   {
     "name": "XLNet-large",
@@ -156,9 +167,9 @@
     ],
     "textLength": 1000,
     "training": "trained",
-    "gpu": 24
-  ,
-    "glue": 90.5
+    "gpu": 24,
+    "glue": 90.5,
+    "amount": 1000
   },
   {
     "name": "T5",
@@ -171,7 +182,8 @@
     "textLength": 1001,
     "training": "untrained",
     "gpu": 25,
-    "glue": 90.3
+    "glue": 90.3,
+    "amount": 10001
   },
   {
     "name": "T5-base",
@@ -184,7 +196,8 @@
     "textLength": 1001,
     "training": "trained",
     "gpu": 8,
-    "glue": 82.7
+    "glue": 82.7,
+    "amount": 10001
   },
   {
     "name": "T5-large",
@@ -197,7 +210,8 @@
     "textLength": 1001,
     "training": "trained",
     "gpu": 24,
-    "glue": 86.4
+    "glue": 86.4,
+    "amount": 10001
   },
   {
     "name": "fastText",
@@ -211,7 +225,8 @@
     "textLength": 1001,
     "training": "untrained",
     "gpu": 8,
-    "glue": 0
+    "glue": 0,
+    "amount": 10001
   },
   {
     "name": "fastText-trained",
@@ -226,6 +241,7 @@
     "textLength": 1001,
     "training": "trained",
     "gpu": 8,
-    "glue": 0
+    "glue": 0,
+    "amount": 10001
   }
 ]
