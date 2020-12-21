@@ -68,8 +68,8 @@
                 <div class="input-field col s12 m6">
                     <select id="textLength">
                         <option value="" disabled selected>Länge der Nutzerkommentare</option>
-                        <option value="1000">< 512 Tokens</option>
-                        <option value="1001">> 512 Tokens</option>
+                        <option value="1000">< 512 Tokens (entspicht: weniger als ca. 512 Wörter)</option>
+                        <option value="1001">> 512 Tokens (entspicht: mehr als ca. 512 Wörter)</option>
                     </select>
                     <label for="textLength">Länge der Nutzerkommentare <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="Ein Token entspricht einem Wort oder Sub-Wort, falls das gesuchte Wort nicht im Wortschatz des Models vorhanden ist.">info</i></label>
                 </div>
@@ -78,20 +78,17 @@
                     <select id="amount">
                         <option value="" disabled selected>Anzahl an Trainingsdaten</option>
                         <option value="1000">< 1.000</option>
-                        <option value="5000">< 5.000</option>
-                        <option value="10000">< 10.000</option>
+                        <option value="5000">> 1.000 und < 5.000</option>
+                        <option value="10000">> 5.000 und < 10.000</option>
                         <option value="10001">> 10.000</option>
                     </select>
                     <label for="amount">Anzahl an Trainingsdaten <i class="material-icons tiny tooltipped" data-position="top" data-tooltip="Die Anzahl der für das Training zur Verfügung stehenden Trainingsdaten.">info</i></label>
                 </div>
             </div>
-            <div class="row center">
-                <a href="#" id="search" class="btn-small waves-effect waves-light orange disabled">Suchen</a>
-            </div>
         </div>
     </div>
 
-    <div class="container hide" id="table-container">
+    <div class="container" id="table-container">
         <div class="section">
 
             <!--Model Table Section-->
