@@ -93,7 +93,7 @@
     "description": "RoBERTa basiert auf dem BERT-Modell, welches mit Hilfe einer Maskierungsstrategie erlernt, versteckte (maskierte) Teile eines Textes zu rekonstruieren. RoBERTa nutzt diese Maskierung, wird im Vergleich zu BERT jedoch mit deutlich kleineren Batches, mehr Daten und für einen längeren Zeitraum trainiert. Dies erlaubt eine größere Genauigkeit in ML-Aufgaben.",
     "paper": "https://arxiv.org/abs/1907.11692",
     "languages": [
-      {"english": "https://huggingface.co/roberta-base"}
+      {"english": "https://huggingface.co/roberta-large"}
     ],
     "textLength": 1000,
     "training": "trained",
