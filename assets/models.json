@@ -212,36 +212,5 @@
     "gpu": 24,
     "glue": 86.4,
     "amount": 10001
-  },
-  {
-    "name": "fastText",
-    "github": "https://github.com/facebookresearch/fastText",
-    "description": "Entwickelt wurde fastText in den \"Facebook AI Reasearch\" (FAIR) Laboren. Jedes Wort welches fastText verarbeitet, wird in ein \"n-gram\" von Wörtern zerlegt, um daraus eine Vektorrepräsentation zu erzeugen.",
-    "download": "https://fasttext.cc/docs/en/english-vectors.html",
-    "paper": "https://arxiv.org/abs/1607.04606",
-    "languages": [
-      {"multi": ""}
-    ],
-    "textLength": 1001,
-    "training": "untrained",
-    "gpu": 8,
-    "glue": 0,
-    "amount": 10001
-  },
-  {
-    "name": "fastText-trained",
-    "github": "https://github.com/facebookresearch/fastText",
-    "description": "Entwickelt wurde fastText in den \"Facebook AI Reasearch\" (FAIR) Laboren. Jedes Wort welches fastText verarbeitet, wird in ein \"n-gram\" von Wörtern zerlegt, um daraus eine Vektorrepräsentation zu erzeugen.",
-    "download": "https://fasttext.cc/docs/en/english-vectors.html",
-    "paper": "https://arxiv.org/abs/1607.04606",
-    "languages": [
-      {"multi": "https://fasttext.cc/docs/en/crawl-vectors.html"},
-      {"english": "https://fasttext.cc/docs/en/english-vectors.html"}
-    ],
-    "textLength": 1001,
-    "training": "trained",
-    "gpu": 8,
-    "glue": 0,
-    "amount": 10001
   }
 ]

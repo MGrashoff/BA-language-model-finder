@@ -77,15 +77,17 @@ function fillTable() {
             check !== false) {
             lmFound = true;
             lmCount++;
+
+            var link = modelsJSON[i].languages[iterator][language] != undefined ? modelsJSON[i].languages[iterator][language] : '';
             
             if (lmCount <= 3) {
                 html += '' +
                     '<tr>' +
-                    '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' || selectorValues.training === '' ? '-' + language : '') + '</td>' +
+                    '<td style="width: 90px; max-width: 90px;">' + modelsJSON[i].name + (selectorValues.training === 'trained' || (selectorValues.training === '' && modelsJSON[i].training === 'trained') ? '-' + language : '') + '</td>' +
                     '<td style="width: 80px; max-width: 80px;">' + modelsJSON[i].glue + '</td>' +
                     '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].github + '" target="_blank">' + modelsJSON[i].github + '</a></td>' +
                     '<td style="width: 250px; max-width: 250px;">' + modelsJSON[i].description + '</td>' +
-                    '<td style="width: 110px; max-width: 110px;"><a href="' + modelsJSON[i].languages[iterator][language] + '" target="_blank">' + modelsJSON[i].languages[iterator][language] + '</a></td>' +
+                    '<td style="width: 110px; max-width: 110px;"><a href="' + link + '" target="_blank">' + link + '</a></td>' +
                     '<td><a href="' + modelsJSON[i].paper + '" target="_blank">' + modelsJSON[i].paper + '</a></td>' +
                     '</tr>';
             }
