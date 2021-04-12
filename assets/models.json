@@ -170,47 +170,5 @@
     "gpu": 24,
     "glue": 90.5,
     "amount": 1000
-  },
-  {
-    "name": "T5",
-    "github": "https://github.com/google-research/text-to-text-transfer-transformer",
-    "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
-    "paper": "https://arxiv.org/abs/1910.10683",
-    "languages": [
-      {"multi": ""}
-    ],
-    "textLength": 1001,
-    "training": "untrained",
-    "gpu": 25,
-    "glue": 90.3,
-    "amount": 10001
-  },
-  {
-    "name": "T5-base",
-    "github": "https://github.com/google-research/text-to-text-transfer-transformer",
-    "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
-    "paper": "https://arxiv.org/abs/1910.10683",
-    "languages": [
-      {"english": "https://huggingface.co/t5-base"}
-    ],
-    "textLength": 1001,
-    "training": "trained",
-    "gpu": 8,
-    "glue": 82.7,
-    "amount": 10001
-  },
-  {
-    "name": "T5-large",
-    "github": "https://github.com/google-research/text-to-text-transfer-transformer",
-    "description": "Text-To-Text Transfer Transformer (T5) wurde innerhalb von \"Google Reasearch\" von Colin Raffel et. al. entwickelt. Zugrunde liegt eine empirische Studie über die Effektivität verschiedener \"transfer learning\" Techniken und ein eigens entwickelter Trainings-Datensatz (C4). Sowohl Ein- als auch Ausgabe sind Texte.",
-    "paper": "https://arxiv.org/abs/1910.10683",
-    "languages": [
-      {"english": "https://huggingface.co/t5-large"}
-    ],
-    "textLength": 1001,
-    "training": "trained",
-    "gpu": 24,
-    "glue": 86.4,
-    "amount": 10001
   }
 ]
